@@ -5,6 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { AppComponent } from "./app.component";
 import { HelloComponent } from "./hello.component";
 import { RouterModule, Routes } from "@angular/router";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 const routes: Routes = [
   {
@@ -14,7 +15,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule
+  ],
   declarations: [AppComponent, HelloComponent],
   bootstrap: [AppComponent]
 })
