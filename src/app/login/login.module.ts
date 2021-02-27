@@ -1,3 +1,5 @@
+import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -8,9 +10,12 @@ import { RouterModule } from "@angular/router";
 
 import { LoginComponent } from "./login.component";
 import { LOGIN_ROUTE } from "./login.route";
+import { LoginService } from "./login.service";
 
 @NgModule({
   imports: [
+    CommonModule,
+    HttpClientModule,
     RouterModule.forChild([LOGIN_ROUTE]),
 
     MatCardModule,
@@ -22,6 +27,7 @@ import { LOGIN_ROUTE } from "./login.route";
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [LoginComponent]
+  declarations: [LoginComponent],
+  providers: [LoginService]
 })
 export class LoginModule {}

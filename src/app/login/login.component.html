@@ -1,4 +1,4 @@
-<div fxFlex="100" fxLayout="row" fxLayoutAlign="center center">
+<div id="app-login" fxFlex="100" fxLayout="row" fxLayoutAlign="center center">
 
 	<mat-card fxFlex="50">
 		<mat-card-header>
@@ -14,25 +14,28 @@
                 name="username"
                 id="username"
                 placeholder="username"
-                formControlName="username"
+                formControlName="email"
                 #username
               />
-            </mat-form-field>
+        </mat-form-field>
 
 					<mat-form-field>
 						<mat-label>Password</mat-label>
 						<input
-                matInput
-                type="password"
-                name="password"
-                id="password"
-                placeholder="password"
-                formControlName="password"
-              />
-            </mat-form-field>
+              matInput
+              type="password"
+              name="password"
+              id="password"
+              placeholder="password"
+              formControlName="password"
+            />
+        </mat-form-field>
 
 						<button color="primary" mat-raised-button type="submit" class="btn btn-primary" >Sign in</button>
 			</form>
+			<div *ngIf="authenticationError" class="error">
+				<strong>Failed to sign in!</strong> Please check your credentials and try again.
+			</div>
 		</mat-card-content>
 	</mat-card>
 </div>
