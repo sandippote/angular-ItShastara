@@ -16,6 +16,11 @@ const routes: Routes = [
       import("./list-people/list-people.module").then(l => l.ListPeopleModule)
   },
   {
+    path: "profile",
+    loadChildren: () =>
+      import("./profile/profile.module").then(p => p.ProfileModule)
+  },
+  {
     path: "auth",
     loadChildren: () => import("./login/login.module").then(l => l.LoginModule)
   }
