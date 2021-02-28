@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
           // if (!this.router.getCurrentNavigation()) {
           //   this.router.navigate(['']);
           // }
-          this._router.navigate(["auth"]);
+          this._router.navigate(["home"]);
         },
         () => (this.authenticationError = true)
       );
