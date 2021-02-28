@@ -1,0 +1,22 @@
+<!-- <div id="app-list-people"> -->
+<div id="app-list-people" fxLayout="row" *ngFor="let people of peoples; index as i">
+
+	<div fxFlex="14" fxLayout fxLayoutAlign="center center">
+		<img [src]="people.avatar">
+    </div>
+
+		<div fxflex fxLayout="column">
+			<div>
+				<label>First Name</label> {{ people.first_name }}
+			</div>
+			<div>
+				<label>Last Name</label> {{ people.last_name }}
+			</div>
+			<div>
+				<label>Email Id</label> {{ people.email }}
+			</div>
+
+		</div>
+	</div>
+
+	<!-- </div> -->

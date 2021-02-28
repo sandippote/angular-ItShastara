@@ -7,16 +7,13 @@ import { HelloComponent } from "./hello.component";
 import { RouterModule, Routes } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatIconModule } from "@angular/material/icon";
-import { ListPeopleComponent } from './list-people/list-people.component';
-
-// import { navbarRoute } from "./navbar/navbar.route";
-// const LAYOUT_ROUTES = [navbarRoute];
-
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { NavbarComponent } from "./navbar/navbar.component";
 const routes: Routes = [
   {
-    path: "home",
+    path: "people",
     loadChildren: () =>
-      import("./navbar/navbar.module").then(n => n.NavbarModule)
+      import("./list-people/list-people.module").then(l => l.ListPeopleModule)
   },
   {
     path: "auth",
@@ -31,9 +28,10 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
 
+    FlexLayoutModule,
     MatIconModule
   ],
-  declarations: [AppComponent, HelloComponent, ListPeopleComponent],
+  declarations: [AppComponent, HelloComponent, NavbarComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

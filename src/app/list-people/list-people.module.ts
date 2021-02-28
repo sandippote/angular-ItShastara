@@ -9,6 +9,7 @@ import { MatInputModule } from "@angular/material/input";
 import { RouterModule } from "@angular/router";
 import { ListPeopleComponent } from "./list-people.component";
 import { LIST_ROUTE } from "./list-people.route";
+import { ListPeopleService } from "./list-people.service";
 
 @NgModule({
   imports: [
@@ -26,6 +27,6 @@ import { LIST_ROUTE } from "./list-people.route";
     ReactiveFormsModule
   ],
   declarations: [ListPeopleComponent],
-  providers: []
+  providers: [ListPeopleService]
 })
 export class ListPeopleModule {}
