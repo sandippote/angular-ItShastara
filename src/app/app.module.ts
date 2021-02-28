@@ -7,6 +7,7 @@ import { HelloComponent } from "./hello.component";
 import { RouterModule, Routes } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatIconModule } from "@angular/material/icon";
+import { ListPeopleComponent } from './list-people/list-people.component';
 
 // import { navbarRoute } from "./navbar/navbar.route";
 // const LAYOUT_ROUTES = [navbarRoute];
@@ -16,11 +17,6 @@ const routes: Routes = [
     path: "home",
     loadChildren: () =>
       import("./navbar/navbar.module").then(n => n.NavbarModule)
-  },
-  {
-    path: "people",
-    loadChildren: () =>
-      import("../people-list/people-list.module").then(p => p.PeopleListModule)
   },
   {
     path: "auth",
@@ -37,7 +33,7 @@ const routes: Routes = [
 
     MatIconModule
   ],
-  declarations: [AppComponent, HelloComponent],
+  declarations: [AppComponent, HelloComponent, ListPeopleComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
