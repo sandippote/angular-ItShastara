@@ -1,11 +1,27 @@
 <div fxFlex="80" fxLayout="row" fxLayoutAlign="start center">
 
-  <div>
-    {{detail.backdrop_path}}
-    {{detail.poster_path}}
-    {{detail.overview}}
-    {{detail.original_language}}
-
+  <div fxLayout="column">
+    <div>
+      {{detail.backdrop_path}}
+    </div>
+    <div>
+      {{detail.poster_path}}
+    </div>
+    <div>
+      {{detail.overview}}
+    </div>
+    <div>
+      {{detail.original_language}}
+    </div>
+    <div>
+      {{ detail.popularity}}
+    </div>
+    <div>
+      {{ detail.release_date}}
+    </div>
+    <div>
+      {{ detail.revenue}}
+    </div>
   </div>
 
 </div>
