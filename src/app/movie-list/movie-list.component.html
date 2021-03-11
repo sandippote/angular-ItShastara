@@ -3,7 +3,7 @@
     {{ genre.name}}
 
     <div class="movie" fxLayout="row" fxLayoutGap="4px">
-      <div fxFlex="50" class="title" fxLayout="column" *ngFor="let movie of genre?.movies; index as j">
+      <div fxFlex="50" class="title" fxLayout="column" *ngFor="let movie of genre?.movies; index as j" (click)="navigate(movie)">
         <img src="" [alt]="movie.original_language">
           {{movie?.title}}
       </div>
