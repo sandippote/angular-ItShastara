@@ -35,6 +35,7 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(res => {
         console.log(res);
+        this.detail = res;
       });
   }
 
