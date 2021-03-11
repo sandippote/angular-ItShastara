@@ -8,21 +8,17 @@ import { RouterModule, Routes } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatIconModule } from "@angular/material/icon";
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { NavbarComponent } from "./navbar/navbar.component";
+import { MovieListComponent } from "./movie-list/movie-list.component";
+import { HttpClientModule } from "@angular/common/http";
+import { MovieDetailComponent } from "./movie-detail/movie-detail.component";
 const routes: Routes = [
   {
-    path: "people",
-    loadChildren: () =>
-      import("./list-people/list-people.module").then(l => l.ListPeopleModule)
+    path: "movie_list",
+    component: MovieListComponent
   },
   {
-    path: "profile",
-    loadChildren: () =>
-      import("./profile/profile.module").then(p => p.ProfileModule)
-  },
-  {
-    path: "auth",
-    loadChildren: () => import("./login/login.module").then(l => l.LoginModule)
+    path: "movie_detail/:id",
+    component: MovieDetailComponent
   }
 ];
 
@@ -30,13 +26,19 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
 
     FlexLayoutModule,
     MatIconModule
   ],
-  declarations: [AppComponent, HelloComponent, NavbarComponent],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    MovieListComponent,
+    MovieDetailComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,0 +1,25 @@
+#app-movie-list {
+  .display {
+    border: 1px solid grey;
+    padding: 4px;
+    cursor: pointer;
+  }
+  .display:hover {
+    color: rgb(64, 64, 230);
+  }
+
+  .movie:hover {
+    color: black;
+    cursor: default;
+  }
+
+  .movie {
+    overflow-x: scroll;
+
+    .title {
+      border: 1px solid grey;
+      padding: 4px;
+      border-radius: 8px;
+    }
+  }
+}
