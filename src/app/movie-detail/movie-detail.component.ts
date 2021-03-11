@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { MovieService } from '../app.service';
 
 @Component({
   selector: 'app-movie-detail',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _activatedRoute: ActivatedRoute,
+    private _movieService: MovieService
+  ) { }
 
   ngOnInit() {
   }
