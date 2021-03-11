@@ -21,4 +21,12 @@ export class MovieService {
         "/movies?api_key=68e82445c8842ba8616d0f6bf0e97a41"
     );
   }
+
+  getMovieDetail(id: number): Observable<any> {
+    return this._http.get<any>(
+      "https://api.themoviedb.org/3/movie/" +
+        id +
+        "?api_key=68e82445c8842ba8616d0f6bf0e97a41"
+    );
+  }
 }
